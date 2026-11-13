@@ -1,0 +1,500 @@
+/*
+******************************************************************************
+Curso: Tecnologia em Análise e Desenvolvimento de Sistemas
+Disciplina: Linguagem e Técnicas de Programação
+Professor: Flores
+Turma: ADS2A
+Componentes:
+ 26007590-2 - Ana Carolyne Basiewics Sprada
+ 26013429-2 - Andre Jose Rosa Neto
+ 26003158-2 - Pamela Gabriele Pereira
+ 26005480-2 - Paulo Henrique Sordo Carlim
+ 26011000-2 - Pedro Henrique Damazio de Arruda
+ 26013857-2 - Pedro Leonardo de Assis Barbosa
+ 26007980-2 - Victor Hugo Gonçalves dos Santos
+Data: 11 de Novembro de 2026
+Descritivo: Define a identidade visual, o layout, os componentes, as tabelas, os formulários e a responsividade do sistema.
+******************************************************************************
+*/
+/*
+  Define a regra geral para todos os elementos, garantindo que a largura e o padding
+  sejam calculados corretamente dentro do layout do sistema.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/*
+  Remove margens padrão do corpo da página e aplica a fonte base, a cor de texto e o fundo visual.
+*/
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6fa;
+  color: #202938;
+}
+
+/*
+  Centraliza o conteúdo principal dentro de uma largura máxima e mantém o layout responsivo.
+*/
+.container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+/*
+  Define o topo do sistema com fundo azul escuro, texto branco e sombra para destacar a barra superior.
+*/
+.topo {
+  background: #172554;
+  color: #fff;
+  box-shadow: 0 3px 12px #0f172a22;
+}
+
+/*
+  Ajusta a altura e o alinhamento do conteúdo do cabeçalho para manter logo e navegação organizados.
+*/
+.topo-conteudo {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/*
+  Estiliza a marca do sistema na barra superior, deixando-a em destaque com peso e cor definidos.
+*/
+.marca {
+  font-size: 21px;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+  Organiza a navegação do menu em linha e permite quebra de itens em telas menores.
+*/
+nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+/*
+  Define a aparência dos links do menu, incluindo cor e destaque visual.
+*/
+nav a {
+  color: #dbeafe;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/*
+  Altera a cor dos links ao passar o mouse, indicando interatividade.
+*/
+nav a:hover {
+  color: #fff;
+}
+
+/*
+  Ajusta a área principal do conteúdo, reservando espaço para o topo e o rodapé do layout.
+*/
+.conteudo {
+  min-height: calc(100vh - 130px);
+  padding-top: 38px;
+  padding-bottom: 55px;
+}
+
+/*
+  Define o tamanho e a cor dos títulos principais da interface para manter hierarquia visual.
+*/
+h1 {
+  font-size: 30px;
+  margin: 0 0 10px;
+  color: #172554;
+}
+
+/*
+  Aplica a mesma identidade visual aos subtítulos da página.
+*/
+h2 {
+  color: #172554;
+}
+
+/*
+  Define a cor padrão dos parágrafos para melhorar legibilidade e contraste.
+*/
+p {
+  color: #64748b;
+}
+
+/*
+  Cria um bloco de boas-vindas com fundo degradê e borda arredondada para destacar a área inicial.
+*/
+.boas-vindas {
+  padding: 34px;
+  background: linear-gradient(120deg, #e0e7ff, #eff6ff);
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+
+/*
+  Ajusta o tamanho do título da seção de boas-vindas para enfatizar a mensagem inicial.
+*/
+.boas-vindas h1 {
+  font-size: 34px;
+  margin-top: 12px;
+}
+
+/*
+  Estiliza a etiqueta de destaque que identifica status ou categorias em destaque.
+*/
+.etiqueta {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 30px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/*
+  Organiza os cards em duas colunas para apresentar informações em blocos visuais.
+*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/*
+  Estiliza cada cartão com fundo branco, bordas e sombra para compor o dashboard da aplicação.
+*/
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 5px 20px #0f172a08;
+}
+
+/*
+  Define a margem da legenda dentro dos cards para manter o alinhamento visual.
+*/
+.card-legenda {
+  margin: 0 0 8px;
+}
+
+/*
+  Destaca os números principais dos cards com grande tamanho e cor forte.
+*/
+.card strong {
+  display: block;
+  font-size: 36px;
+  color: #172554;
+  margin-bottom: 12px;
+}
+
+/*
+  Define a aparência dos links dentro dos cards para incentivar navegação e clique.
+*/
+.card a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/*
+  Cria espaço acima da área de atalhos para separar blocos de conteúdo.
+*/
+.atalhos {
+  margin-top: 28px;
+}
+
+/*
+  Estiliza os botões de ação principal da interface com fundo azul e texto branco.
+*/
+.botao {
+  display: inline-block;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  padding: 11px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/*
+  Altera a cor do botão ao passar o mouse, indicando interação e feedback visual.
+*/
+.botao:hover {
+  background: #1d4ed8;
+}
+
+/*
+  Define um botão secundário com visual mais discreto e sem destaque principal.
+*/
+.botao.secundario {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+/*
+  Ajusta a cor do botão secundário em hover para manter uma aparência consistente.
+*/
+.botao.secundario:hover {
+  background: #cbd5e1;
+}
+
+/*
+  Organiza o cabeçalho das páginas com título e botão de ação em uma mesma linha.
+*/
+.titulo-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+/*
+  Remove margem do texto auxiliar do cabeçalho para manter alinhamento visual.
+*/
+.titulo-pagina p {
+  margin: 0;
+}
+
+/*
+  Cria um contêiner com rolagem horizontal para tabelas largas em dispositivos pequenos.
+*/
+.tabela-responsiva {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+/*
+  Define a largura e o estilo da tabela para manter o layout uniforme e legível.
+*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+/*
+  Ajusta o espaço interno e a borda das células da tabela para facilitar leitura.
+*/
+th,
+td {
+  text-align: left;
+  padding: 13px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+/*
+  Destaca o cabeçalho da tabela com fundo neutro e letras em caixa alta para organização.
+*/
+th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/*
+  Adiciona efeito ao passar o mouse nas linhas da tabela para melhorar a experiência visual.
+*/
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+/*
+  Centraliza a mensagem exibida quando não há dados em uma tabela.
+*/
+.vazio {
+  text-align: center;
+  padding: 28px;
+  color: #64748b;
+}
+
+/*
+  Define o alinhamento das ações de editar e excluir em uma linha horizontal.
+*/
+.acoes {
+  white-space: nowrap;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/*
+  Garante que o formulário de exclusão fique alinhado com os links de ação.
+*/
+.acoes form {
+  display: inline;
+}
+
+/*
+  Remove estilos padrão dos links e botões de ação para manter o visual minimalista.
+*/
+.link-editar,
+.link-excluir {
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/*
+  Define a cor do link de edição para indicar uma ação de atualização.
+*/
+.link-editar {
+  color: #2563eb;
+}
+
+/*
+  Define a cor do link de exclusão para indicar uma ação de remoção perigosa.
+*/
+.link-excluir {
+  color: #dc2626;
+}
+
+/*
+  Cria um bloco de formulário com fundo branco e borda para receber os dados do usuário.
+*/
+.formulario {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  max-width: 760px;
+  margin-top: 22px;
+}
+
+/*
+  Ajusta os labels dos campos para manter texto e entrada alinhados corretamente.
+*/
+.formulario label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 17px;
+}
+
+/*
+  Define o estilo dos campos de entrada e textarea, incluindo borda, preenchimento e largura total.
+*/
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  padding: 11px;
+  font: inherit;
+  background: #fff;
+  color: #1e293b;
+}
+
+/*
+  Destaque visual ao focar nos campos para melhorar experiência do usuário e acessibilidade.
+*/
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #bfdbfe;
+  border-color: #3b82f6;
+}
+
+/*
+  Organiza formulários com duas colunas em telas maiores para otimizar espaço.
+*/
+.grade-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/*
+  Alinha os botões do formulário em uma linha com espaçamento consistente.
+*/
+.botoes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/*
+  Cria uma mensagem de alerta verde para informar sucesso ou confirmação para o usuário.
+*/
+.alerta {
+  padding: 13px 16px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+/*
+  Cria uma mensagem de erro em vermelho para indicar falhas ou validações necessárias.
+*/
+.alerta.erro {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/*
+  Define o rodapé do sistema com fundo azul escuro e texto em tom claro para fechamento visual do layout.
+*/
+.rodape {
+  background: #172554;
+  color: #cbd5e1;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+/*
+  Ajusta o layout para telas menores, empilhando elementos e reduzindo colunas de grade.
+*/
+@media (max-width: 700px) {
+  .topo-conteudo {
+    padding: 15px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  .cards,
+  .grade-form {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-pagina {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .boas-vindas h1 {
+    font-size: 27px;
+  }
+}
